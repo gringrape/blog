@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgringrape_blog=self.webpackChunkgringrape_blog||[]).push([[691],{7200:function(e,r,n){n.r(r);var l=n(5893);r.default=function(){return(0,l.jsx)("h1",{children:"hello, world!"})}}}]);
-//# sourceMappingURL=component---src-pages-index-tsx-8c5883943e80de420ed6.js.map
