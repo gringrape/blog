@@ -6,7 +6,7 @@ const Container = styled.nav`
   padding: 1em;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid ${colors.normal};
+  border-bottom: 1px solid ${colors.border};
   
   a {
     color: ${colors.focus};

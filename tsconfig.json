@@ -104,6 +104,7 @@
     "./gatsby-browser.ts",
     "./gatsby-config.ts",
     "./plugins/**/*",
-    "./.eslintrc.cjs"
+    "./.eslintrc.cjs",
+    "./global.d.ts"
   ]
 }
