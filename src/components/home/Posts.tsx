@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { colors } from '../../styles';
 
+import PostListItem from '../PostListItem';
+
 const Container = styled.div`
   width: 85%;
 
@@ -11,17 +13,6 @@ const Container = styled.div`
     border-bottom: 1px solid ${colors.border};
   }
 `;
-
-const posts = [
-  { title: '영화를 보다가', date: '2024.03.01' },
-  { title: '김밥을 먹다가', date: '2025.03.01' },
-  { title: '사진을 보다가', date: '2026.03.01' },
-];
-
-type Post = {
-  title: string;
-  date: string;
-};
 
 const ItemContainer = styled.li`
   padding-block: 1em;
@@ -37,11 +28,11 @@ const ItemContainer = styled.li`
 `;
 
 function PostItem({ post }: {
-  post: Post;
+  post: PostListItem;
 }) {
   return (
     <ItemContainer key={post.title}>
-      <a href="/posts">
+      <a href={post.link}>
         {post.title}
       </a>
       <div>{post.date}</div>
@@ -49,7 +40,9 @@ function PostItem({ post }: {
   );
 }
 
-export default function Posts() {
+export default function Posts({ posts }: {
+  posts: PostListItem[];
+}) {
   return (
     <Container>
       <h3>Recent Posts</h3>

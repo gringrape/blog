@@ -7,21 +7,35 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: true,
   jsxRuntime: 'automatic',
-  plugins: ['gatsby-plugin-styled-components', 'gatsby-plugin-image', 'gatsby-plugin-mdx', 'gatsby-plugin-sharp', 'gatsby-transformer-sharp', {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      name: 'images',
-      path: './src/images/',
+  plugins: [
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-plugin-mdx',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp', {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
+    }, {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: './src/pages/',
+      },
+      __key: 'pages',
     },
-    __key: 'images',
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      name: 'pages',
-      path: './src/pages/',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/src/posts`,
+      },
     },
-    __key: 'pages',
-  }],
+    'gatsby-transformer-remark',
+  ],
 };
 
 export default config;
