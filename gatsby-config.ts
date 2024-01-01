@@ -2,7 +2,7 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: 'gringrape blog',
+    title: '안녕!',
     siteUrl: 'https://www.yourdomain.tld',
   },
   graphqlTypegen: true,

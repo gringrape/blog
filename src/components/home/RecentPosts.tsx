@@ -4,6 +4,8 @@ import { colors } from '../../styles';
 
 import PostListItem from '../PostListItem';
 
+import useRecentPosts from '../../hooks/useRecentPosts';
+
 const Container = styled.div`
   width: 85%;
 
@@ -40,9 +42,9 @@ function PostItem({ post }: {
   );
 }
 
-export default function Posts({ posts }: {
-  posts: PostListItem[];
-}) {
+export default function RecentPosts() {
+  const posts = useRecentPosts();
+
   return (
     <Container>
       <h3>Recent Posts</h3>

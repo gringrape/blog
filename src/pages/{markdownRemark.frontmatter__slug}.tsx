@@ -1,4 +1,5 @@
 import './markdown-style.css';
+import 'highlight.js/styles/github-dark.css';
 
 import styled from 'styled-components';
 
@@ -6,8 +7,10 @@ import { graphql } from 'gatsby';
 
 import hljs from 'highlight.js';
 
-import 'highlight.js/styles/github-dark.css';
 import { useEffect } from 'react';
+
+import Layout from '../components/layout/Layout';
+import Navigation from '../components/home/Navigation';
 
 const Article = styled.article`
   box-sizing: border-box;
@@ -25,7 +28,7 @@ const Article = styled.article`
 `;
 
 const Header = styled.header`
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 
   h1 {
     display: flex;
@@ -64,15 +67,18 @@ export default function BlogPostTemplate({
   }, []);
 
   return (
-    <Article className="markdown-body">
-      <Header>
-        <h1>
-          <strong>{frontmatter.title}</strong>
-          <span>{frontmatter.date}</span>
-        </h1>
-      </Header>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </Article>
+    <Layout>
+      <Navigation pathname="" />
+      <Article className="markdown-body">
+        <Header>
+          <h1>
+            <strong>{frontmatter.title}</strong>
+            <span>{frontmatter.date}</span>
+          </h1>
+        </Header>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Article>
+    </Layout>
   );
 }
 

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
+import { MouseEventHandler } from 'react';
+
 import { colors } from '../../styles';
+
+import useNaviateToRandomPost from '../../hooks/useNavigateRandomPost';
 
 const Container = styled.nav`
   padding: 1em;
@@ -9,6 +13,25 @@ const Container = styled.nav`
   border-bottom: 1px solid ${colors.border};
   
   a {
+    color: ${colors.focus};
+  }
+`;
+
+const LinksContainer = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  `;
+
+const LinkItem = styled.li<{ selected: boolean; }>`
+  a {
+    font-weight: ${({ selected }) => (selected ? 'bold' : 'normal')};
+    color: ${({ selected }) => (selected ? colors.focus : colors.normal)};
+    text-decoration: none;
+  }
+
+  a:hover {
     color: ${colors.focus};
   }
 `;
@@ -25,45 +48,29 @@ function Logo() {
   );
 }
 
-const ItemsContainer = styled.ul`
-  display: flex;
-  align-items: center;
-  gap: 1em;
-
-  `;
-
-const Item = styled.li<{ selected: boolean; }>`
-  a {
-    font-weight: ${({ selected }) => (selected ? 'bold' : 'normal')};
-    color: ${({ selected }) => (selected ? colors.focus : colors.normal)};
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: ${colors.focus};
-  }
-`;
-
-function Items({ currentPath }: {
+function Links({ currentPath }: {
   currentPath: string;
 }) {
+  const navigateToRandomPost = useNaviateToRandomPost();
+
+  const handleClickRandom: MouseEventHandler = (e) => {
+    e.preventDefault();
+    navigateToRandomPost();
+  };
+
   return (
-    <ItemsContainer>
-      <Item selected={currentPath === '/'}>
-        <a
-          href="/"
-        >
+    <LinksContainer>
+      <LinkItem selected={currentPath === '/'}>
+        <a href="/">
           Home
         </a>
-      </Item>
-      <Item selected={currentPath === '/posts'}>
-        <a
-          href="/posts"
-        >
-          Posts
+      </LinkItem>
+      <LinkItem selected={currentPath === '/posts'}>
+        <a href="/random" onClick={handleClickRandom}>
+          Random
         </a>
-      </Item>
-    </ItemsContainer>
+      </LinkItem>
+    </LinksContainer>
   );
 }
 
@@ -73,7 +80,7 @@ export default function Navigation({ pathname }: {
   return (
     <Container>
       <Logo />
-      <Items currentPath={pathname} />
+      <Links currentPath={pathname} />
     </Container>
   );
 }
