@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgringrape_blog=self.webpackChunkgringrape_blog||[]).push([[754],{234:function(n,r,e){e.r(r),e.d(r,{default:function(){return i}});var u=e(1146),c=e(5893);function i(){return(0,c.jsx)(u.Z,{children:(0,c.jsx)("h1",{children:"글 목록입니다!"})})}}}]);
+//# sourceMappingURL=component---src-pages-posts-tsx-d3fadf6deca1a30c41d7.js.map

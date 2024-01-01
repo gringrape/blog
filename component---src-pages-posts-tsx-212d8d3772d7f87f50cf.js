@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgringrape_blog=self.webpackChunkgringrape_blog||[]).push([[754],{7762:function(n,t,e){const i=e(3133).default.div.withConfig({displayName:"Layout",componentId:"sc-6fptxb-0"})(["margin:0 auto;max-width:768px;"]);t.Z=i},234:function(n,t,e){e.r(t),e.d(t,{default:function(){return u}});var i=e(7762),r=e(5893);function u(){return(0,r.jsx)(i.Z,{children:(0,r.jsx)("h1",{children:"글 목록입니다!"})})}}}]);
-//# sourceMappingURL=component---src-pages-posts-tsx-212d8d3772d7f87f50cf.js.map
