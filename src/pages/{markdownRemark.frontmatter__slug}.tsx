@@ -13,9 +13,11 @@ const Article = styled.article`
   box-sizing: border-box;
   min-width: 200px;
   max-width: 980px;
-  margin: 0 auto;
-  margin-bottom: 5em;
+  margin: 5em auto;
   padding: 45px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #333;
+  background: rgba(0, 0, 0, 0.5);
 
   @media (max-width: 767px) {
     padding: 15px;
